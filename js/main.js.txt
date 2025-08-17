@@ -1,0 +1,129 @@
+This `main.js` file is the **core JavaScript file** for your **Mediplus** hospital website template. It initializes various interactive features, plugins, and animations to enhance user experience. Below is a breakdown of its functionality:
+
+---
+
+## **Key Features & Functionality in `main.js`**
+
+### **1. Sticky Header**
+- Adds a fixed header when scrolling down (shows after 100px or 200px scroll).
+- **Classes Applied:**  
+  ```javascript
+  $('#header .header-inner').addClass("sticky"); // or .header.sticky
+  ```
+
+### **2. Search Functionality**
+- Toggles a search bar when the search icon is clicked.
+- **Trigger:**  
+  ```javascript
+  $('.search a').on("click", function() { ... });
+  ```
+
+### **3. Mobile Menu (Hamburger Menu)**
+- Uses **SlickNav** for a responsive mobile menu.
+- **Initialization:**  
+  ```javascript
+  $('.menu').slicknav({ prependTo:".mobile-nav" });
+  ```
+
+### **4. Sliders (Using Owl Carousel)**
+- **Hero Slider** (Full-width banner slideshow)  
+- **Testimonial Slider** (Displays 1-3 testimonials based on screen size)  
+- **Portfolio Slider** (Showcases hospital services/gallery in a carousel)  
+- **Clients Slider** (Logos of partners/medical brands)  
+- **Single Portfolio Slider** (For detailed project views)  
+
+**Example:**
+```javascript
+$(".hero-slider").owlCarousel({ 
+  autoplay: true, 
+  nav: true, 
+  dots: false 
+});
+```
+
+### **5. Counter Animation**
+- Animated numbers (e.g., "Patients Treated," "Doctors Available") using **CounterUp**.
+- **Example:**
+  ```javascript
+  $('.counter').counterUp({ delay: 20, time: 2000 });
+  ```
+
+### **6. Accordion (FAQs / Services Section)**
+- Expandable/collapsible sections.
+- **Trigger:**  
+  ```javascript
+  $('.accordion a').on('click', function() { ... });
+  ```
+
+### **7. Dropdowns & Date Picker**
+- **Nice Select** → Converts `<select>` dropdowns into styled ones.  
+- **jQuery UI Date Picker** → For appointment booking forms.  
+  ```javascript
+  $("#datepicker").datepicker();
+  ```
+
+### **8. Checkbox Styling**
+- Adds a `checked` class to styled checkboxes (e.g., consent forms).  
+  ```javascript
+  $('input[type="checkbox"]').change(function() { ... });
+  ```
+
+### **9. Sidebar / Right Bar**
+- Toggleable off-canvas sidebar (e.g., for patient login/quick links).  
+  ```javascript
+  $('.right-bar .bar').on("click", function() { ... });
+  ```
+
+### **10. Video Popup (Magnific Popup)**
+- Opens YouTube/Vimeo videos in a lightbox.  
+  ```javascript
+  $('.video-popup').magnificPopup({ type: 'video' });
+  ```
+
+### **11. Scroll Animations (WOW.js)**
+- Animates elements on scroll (only on desktop).  
+  ```javascript
+  new WOW().init();
+  ```
+
+### **12. Smooth Scrolling**
+- For anchor links (e.g., "Learn More" buttons).  
+  ```javascript
+  $('.scroll').on("click", function() { ... });
+  ```
+
+### **13. Google Maps Integration**
+- Displays a map with a marker (default location set).  
+  ```javascript
+  var map = new GMaps({ lat: 23.011245, lng: 90.884780 });
+  ```
+
+### **14. Preloader**
+- Shows a loading screen until the page fully loads.  
+  ```javascript
+  $('.preloader').addClass('preloader-deactivate');
+  ```
+
+### **15. Additional Carousels (Slick Slider)**
+- Extra responsive sliders (e.g., for services or departments).  
+  ```javascript
+  $('.carousel').slick({ slidesToShow: 3, autoplay: true });
+  ```
+
+---
+
+## **Why This Matters for a Hospital Website?**
+- **Better UX:** Smooth animations, easy navigation, and interactive elements keep visitors engaged.  
+- **Mobile-Friendly:** SlickNav and responsive sliders ensure usability on phones/tablets.  
+- **Professional Appearance:** Clean sliders, counters, and accordions make the site look modern.  
+- **Functionality:** Date pickers, maps, and forms improve patient interaction.  
+
+---
+
+### **Need Help?**
+- If any feature isn’t working, check:  
+  - Are all required JS files loaded? (e.g., `jQuery`, `Owl Carousel`, `WOW.js`)  
+  - Are CSS classes correct in HTML?  
+  - Are there console errors? (`F12 > Console` in browser).
+
+Would you like help optimizing or fixing a specific part?
